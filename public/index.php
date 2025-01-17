@@ -11,13 +11,23 @@ define("PATH", "http://localhost/mysite/web");
 
 require CORE . "/funcs.php";
 
+// $uri = trim($_SERVER["REQUEST_URI"], "/mysite/web/");
 
-// var_dump(ROOT);
-// die();
+$uri = $_SERVER["REQUEST_URI"];
+
+// dd($uri);
+
+if ($uri === "") {
+    require CONTROLLERS . "/index.php";
+} elseif ($uri === "about.php") {
+    require CONTROLLERS . "/about.php";
+} else {
+    echo "Error 404";
+}
 
 
-// added constant as path to controller
+// added constant as path to controller +++++++++++++++
 
 // require "../app/controllers/index.php";
 
-require CONTROLLERS . "/index.php";
+// require CONTROLLERS . "/index.php";
