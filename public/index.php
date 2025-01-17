@@ -14,15 +14,16 @@ require CORE . "/funcs.php";
 // $uri = trim($_SERVER["REQUEST_URI"], "/mysite/web/");
 
 $uri = $_SERVER["REQUEST_URI"];
+$uri = parse_url($uri)["path"];
 
-// dd($uri);
+// dump($_GET);
 
-if ($uri === "") {
+if ($uri === "/mysite/web/" || $uri === "/mysite/web/index.php") {
     require CONTROLLERS . "/index.php";
-} elseif ($uri === "about.php") {
+} elseif ($uri === "/mysite/web/about") {
     require CONTROLLERS . "/about.php";
 } else {
-    echo "Error 404";
+    abort();
 }
 
 
