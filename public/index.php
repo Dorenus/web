@@ -12,8 +12,17 @@
 // define("PATH", "http://localhost/mysite/web");
 
 require dirname(__DIR__) . "/config/config.php";
-
 require CORE . "/funcs.php";
+
+require CORE . "/classes/Db.php";
+$db_config = require CONFIG . "/db.php";
+$db = new Db($db_config);
+
+dd($db);
+
+
+die;
+
 
 // require CONFIG . "/routes.php";  // require config file for routes map
 require CORE . "/router.php";   // now router will have routs map available
