@@ -18,10 +18,12 @@ require CORE . "/classes/Db.php";
 $db_config = require CONFIG . "/db.php";
 $db = new Db($db_config);
 
-dd($db);
 
+// $posts = $db->query("SELECT * FROM posts")->fetchAll();
 
-die;
+// dd($posts);
+
+// dd($db);
 
 
 // require CONFIG . "/routes.php";  // require config file for routes map
